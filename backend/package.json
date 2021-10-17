@@ -1,0 +1,27 @@
+{
+  "name": "backend-api",
+  "version": "1.0.0",
+  "description": "REST API to fetch data from MongoDB",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --detectOpenHandles"
+  },
+  "author": "trojanh",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "joi": "^17.4.2",
+    "joi-extension-semver": "^5.0.0",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "jest": "^27.2.2",
+    "supertest": "^6.1.6"
+  }
+}
