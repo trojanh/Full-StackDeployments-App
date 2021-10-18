@@ -40,6 +40,10 @@ const CreateDeployment = ({ addNewDeployment }) => {
     formState: { errors }
   } = useForm()
 
+  const handleTemplateChange = (event) => {
+    const template = TEMPLATES.find(temp => temp.name === event.target.value)
+    if(template) setTemplate(template)
+  }
   return (
     <div className="row">
       <form className="col s12" onSubmit={handleSubmit(addNewDeployment)}>
@@ -48,7 +52,8 @@ const CreateDeployment = ({ addNewDeployment }) => {
             <select
               className="browser-default"
               id="template"
-              // onSelect={}
+              onChange={handleTemplateChange}
+              value={selectedTemplate.name}
               {...register('templateName')}
             >
               <option value="" disabled defaultValue="">

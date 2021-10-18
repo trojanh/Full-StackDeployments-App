@@ -1,5 +1,5 @@
 function addDeployment(inputData) {
-  return fetch(process.env.API_BASE_URL + '/deployments', {
+  return fetch(process.env.REACT_APP_API_BASE_URL + '/deployments', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
