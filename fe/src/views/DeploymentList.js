@@ -5,7 +5,8 @@ import DeploymentItem from '../components/DeploymentItem'
 import addDeployment from '../services/addDeployment'
 import fetchDeployments from '../services/fetchDeployments'
 
-const TodoList = () => {
+const DeploymentList = () => {
+  // eslint-disable-next-line no-unused-vars
   const [isLoading, setIsLoading] = useState(false)
   const deploymentList = useSelector((state) => state.deploymentList)
 
@@ -16,6 +17,7 @@ const TodoList = () => {
       fetchDeployments().then(
         (data) => data && dispatch({ type: 'INIT_DEPLOYMENT', payload: data.data })
       )
+      // let timer1 = setTimeout(() => setIsLoading(false), delay * 1000);
       setIsLoading(false)
     // loadDeployments()
   }, [dispatch])
@@ -33,6 +35,7 @@ const TodoList = () => {
         // console.log({ data })
       })
   }
+  // if (isLoading) return (<div>deploying in {delay} seconds</div>)
   return (
     <div className="row">
       <h3 className="center-align white-text blue">Deployments</h3>
@@ -59,4 +62,4 @@ const TodoList = () => {
   )
 }
 
-export default TodoList
+export default DeploymentList
